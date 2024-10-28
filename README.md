@@ -11,7 +11,7 @@ Posee licencia MIT: podés usarlo sin cargo, modificarlo, etc, sin garantías y 
 
 
 SETUP COTIZADOR - INSTRUCCIONES PARA IMPLEMENTAR LA APLICACIÓN
-1) crea una copia de esta hoja de cálculo en tu espacio de Google Drive: archivo >> crear una copia  (guarda el archivo y envía su link al escritorio o a favoritos de tu navegador para tenerlo siempre a mano. Tiene que tener esta forma: https://docs.google.com/spreadsheets/d/id_de_la_hoja_de_calculo/)
+1) crea una copia de esta hoja de cálculo https://docs.google.com/spreadsheets/d/1o0SSkVmL1IZ6LSxLs7VwV1X7FCDmZC3L2y8EjKh_hiI/edit?usp=sharing en tu espacio de Google Drive: archivo >> crear una copia  (guarda el archivo y envía su link al escritorio o a favoritos de tu navegador para tenerlo siempre a mano. 
 2) edita la hoja de cálculo copiada para personalizar los datos del servicio de alquiler en las pestañas 'TarifasEditable' y 'Adicionales' (solo edita las celdas amarillas)
 3) en el menú superior de la hoja andá a Extensiones >> Google Apps Script: Implementar >> Nueva Implementación (selecciona "Aplicación Web, Ejecutar como: Yo, Quien tiene acceso: cualquier usuario) >> implementar
 sigue los pasos, acepta los permisos, al finalizar copia la url de la aplicación web (tiene esta forma: https://script.google.com/macros/s/......../exec)
@@ -20,4 +20,4 @@ sigue los pasos, acepta los permisos, al finalizar copia la url de la aplicació
 6) con el código de ese archivo 'iframe.html' crea nuevo un archivo html y subilo al directorio web donde deseas publicar tu cotizador, por ejemplo: https://tusitioweb.com/cotizador.html
 7) accede a la url del paso anterior y prueba el formulario cotizador, una vez que cotizas el servicio puedes enviar la solicitud de reserva y esta llegará por email al correo que configuraste en el paso 4)
 
-Si necesitas ayuda (rentada $$) para implementarlo, enviame un email a gonzita@gmail.com
+Si necesitas ayuda (rentada $$) para implementarlo, enviame un email a gonzita@gmail.com o visita https://www.ddw.com.ar/ para ver más servicios
