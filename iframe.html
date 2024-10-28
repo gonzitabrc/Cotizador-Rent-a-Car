@@ -1,0 +1,102 @@
+<!-- 
+    © 2024 DDW, Publicidad Online y Programación Web
+    Autor: Gonzalo Reynoso - DDW, gonzita@gmail.com
+    Sitio web: https://ddw.com.ar
+    Descripción: Cotizador Online para Rent a Car V6
+    Licencia: MIT 
+
+    ATENCIÓN: Este archivo no es parte de Google Apps Script, subilo al directorio de tu dominio donde desees publicarlo, por ejemplo https://tusitio-rentacar.com/cotizador.html editando la url del iframe (implementación web app de google apps script)
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador Rent a Car v6</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            background-color: #292d30;
+        }
+        #container {
+            background-color: #292d30; 
+            width: 100%;
+            height: calc(100vh - 100px); 
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%; 
+            display: block;
+            background-color: #292d30; 
+        }
+        #loadingMessage {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: red; 
+            position: absolute; 
+            top: 100px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 1000;
+            font-family: 'Arial', sans-serif;
+        }
+        /* Header */
+        #header {
+            background-color: #292d30;/* #fff     */
+            padding: 20px 0;
+            text-align: center;
+        }
+        #header img {
+            height: 60px;
+        }
+    </style>
+
+    <script>
+        function checkIframe() {
+            const iframe = document.getElementById('iframeCotizador');
+            const loadingMessage = document.getElementById('loadingMessage');
+
+            loadingMessage.style.display = 'block';
+            iframe.style.display = 'none';
+
+            iframe.onload = function() {
+                loadingMessage.style.display = 'none'; 
+                iframe.style.display = 'block'; 
+            };
+
+            setTimeout(() => {
+                try {
+                    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+                    if (iframeDocument.readyState === 'complete' || iframeDocument.body.innerHTML !== '') {
+                        loadingMessage.style.display = 'none';
+                        iframe.style.display = 'block'; 
+                    }
+                } catch (e) {
+                    loadingMessage.style.display = 'none';
+                    iframe.style.display = 'block'; 
+                }
+            }, 0); 
+        }
+    </script>
+</head>
+<body onload="checkIframe()">
+    <div id="loadingMessage">Cargando aplicación...</div>
+    <div id="header">
+        <a href="https://ddw.com.ar/">
+            <img src="1clicrentacar.png" alt="Rent a Car">
+        </a>
+    </div>
+    <div id="container">
+        <iframe id="iframeCotizador" src="https://script.google.com/macros/s/TU_ID_DE_IMPLEMENTACION_WEB_APP_GOOGLE_APPS_SCRIPT/exec"></iframe>
+    </div>
+</body>
+</html>
